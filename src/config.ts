@@ -32,10 +32,10 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// Leave this array empty to use the default favicon
 		{
-		  src: '/favicon/暗涌层流.png',    // Path of the favicon, relative to the /public directory
-		  theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		  sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		}
+			src: "/favicon/暗涌层流.png", // Path of the favicon, relative to the /public directory
+			theme: "light", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+			sizes: "32x32", // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		},
 	],
 };
 
@@ -56,7 +56,7 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/暗涌层流.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "暗涌层流",
 	bio: `体验与连接的广度<br>思考与实现的深度`,
-	links: []
+	links: [],
 	// links: [
 	// 	{
 	// 		name: "Twitter",
