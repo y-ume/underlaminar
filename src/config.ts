@@ -55,7 +55,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/暗涌层流.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "暗涌层流",
-	bio: `体验与连接的广度<br>思考与实现的深度`,
+	bio: "体验与连接的广度<br>思考与实现的深度",
 	links: [],
 	// links: [
 	// 	{
