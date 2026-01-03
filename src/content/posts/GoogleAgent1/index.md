@@ -1,7 +1,7 @@
 ---
 title: Google Agent 1/5
 published: 2025-12-23
-description: "Google Agent白皮书第一①弹：让我们来认识Agent"
+description: "Google Agent白皮书第①弹：让我们来认识Agent"
 image: "./cover.png"
 tags: ["Agent", "AI"]
 category: Agent
