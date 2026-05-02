@@ -30,7 +30,7 @@ import testPic from './test.jpg';
 | **框架内存开销**       | **极低** (无冗余)           | 偏高 (存在 Python 开销)    |
 | **多模型并发支持**      | **极佳** (自动管理显存置换)      | 一般 (需要手动写代码分配)       |
 
-```expressive-code language="txt" title="➤ 决策" ins={1}
+```txt title="➤ 决策" ins={1}
 选择：MLX
 ✓ 生态前景好
 ✓ 低层优化更好
@@ -39,13 +39,13 @@ import testPic from './test.jpg';
 
 ## Step 2：部署 MLX
 
-```expressive-code language="txt" title="➤ 思考" ins={1}
+```txt title="➤ 思考" ins={1}
 使用 uv 管理 Python 环境
 ✓ 隔离简单又干净
 ✓ 装环境恐惧症患者的福音
 ```
 
-```expressive-code language="bash" title="➤ 实施步骤"
+```txt title="➤ 实施步骤"
 # 安装 uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
@@ -64,14 +64,14 @@ uv pip install mlx-lm
 
 ## Step 3：测试模型
 
-```expressive-code language="txt" title="➤ 思考" ins={1}
+```txt title="➤ 思考" ins={1}
 选择测试模型：mlx-community/Qwen3.5-9B-MLX-4bit
 ✓ 9B 参数量适中，适合快速验证
 ✓ 4bit 量化，内存占用低
 ✓ 模型较新，支持多模态
 ```
 
-```expressive-code language="bash" title="➤ 实施步骤"
+```txt title="➤ 实施步骤"
 # 多模态需要用 mlx-vlm 启动，可能多装了
 uv venv --python 3.11
 uv pip install --upgrade mlx mlx-vlm mlx-lm
@@ -84,31 +84,31 @@ mlx_vlm.generate \
   --max-tokens 5000
 ```
 
-```expressive-code language="txt" title="📊 性能数据"
+```txt title="📊 性能数据"
 Prompt: 438 tokens, 565.461 tokens-per-sec
 Generation: 1297 tokens, 86.367 tokens-per-sec
 Peak memory: 7.035 GB
 ```
 
-```expressive-code language="txt" title="📁 模型存储位置"
+```txt title="📁 模型存储位置"
 下载的模型会存储在：
 ~/.cache/huggingface/hub/
 ```
 
 ## Step 4：查看内存消耗
 
-```expressive-code language="txt" title="➤ 思考" ins={1}
+```txt title="➤ 思考" ins={1}
 监控内存消耗的两种方式
 ✓ 活动监视器：快速直观，适合初步观察
 ✓ asitop：专业工具，详细分析 GPU/CPU/内存
 ```
 
-```expressive-code language="bash" title="➤ 方式 1：活动监视器"
+```txt title="➤ 方式 1：活动监视器"
 # 打开活动监视器
 # 肉眼观察 python 进程
 ```
 
-```expressive-code language="bash" title="➤ 方式 2：asitop（推荐）"
+```txt title="➤ 方式 2：asitop（推荐）"
 uv pip install asitop
 sudo asitop
 ```

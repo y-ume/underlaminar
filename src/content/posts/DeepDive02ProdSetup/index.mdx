@@ -28,7 +28,7 @@ draft: false
 
 ssh 登录服务器后，执行官方安装脚本：
 
-```expressive-code language="bash" title="➤ V2Ray 安装"
+```txt title="➤ V2Ray 安装"
 ssh root@{服务器IP}
 bash <(wget -qO- -o- https://git.io/v2ray.sh)
 ```
@@ -43,7 +43,7 @@ bash <(wget -qO- -o- https://git.io/v2ray.sh)
 
 ssh 登录服务器后，执行官方安装脚本：
 
-```expressive-code language="bash" title="➤ V2Ray 安装"
+```txt title="➤ V2Ray 安装"
 ssh root@{服务器IP}
 bash <(wget -qO- -o- https://git.io/v2ray.sh)
 ```
@@ -63,7 +63,7 @@ bash <(wget -qO- -o- https://git.io/v2ray.sh)
 
 ### 2.1 安装 Oh My Zsh
 
-```expressive-code language="bash" title="➤ 安装 zsh 和 Oh My Zsh"
+```txt title="➤ 安装 zsh 和 Oh My Zsh"
 sudo dnf install -y zsh curl git
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmy-zsh/master/tools/install.sh)"
@@ -71,7 +71,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmy-zsh/master/to
 
 ### 2.2 .zshrc 核心配置
 
-```expressive-code language="bash" title="~/.zshrc 关键配置"
+```txt title="~/.zshrc 关键配置"
 # 目录与清理别名
 alias .="cd .."
 alias cl="clear"
@@ -108,7 +108,7 @@ export NVM_DIR="$HOME/.nvm"
 
 将 `mystyle.zsh-theme` 放置到 `~/.oh-my-zsh/themes/`:
 
-```expressive-code language="bash" title="mystyle.zsh-theme"
+```txt title="mystyle.zsh-theme"
 PROMPT='${PROXY_MARKER}'"%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) (%n)%{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)'
 
@@ -128,7 +128,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 ### 3.1 nvm 与 Node.js
 
-```expressive-code language="bash" title="➤ nvm 和 Node.js 安装"
+```txt title="➤ nvm 和 Node.js 安装"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.zshrc
 nvm install 20
@@ -140,7 +140,7 @@ npm -v
 
 安装完成后，直接使用 `cc` 即可启动，API 配置已全部内嵌在 `.zshrc` 的 alias 中。
 
-```expressive-code language="bash" title="➤ 启动 Claude Code"
+```txt title="➤ 启动 Claude Code"
 cc
 ```
 
@@ -154,7 +154,7 @@ cc
 
 购买阿里云 99 套餐，在阿里云服务器部署 FRPS。阿里云支持原生的 Agent 模式，命令行和 Chat 可以在同一个窗口同时进行，可以愉快地和 AI 对话完成部署：
 
-```expressive-code language="bash" title="➤ frps.toml（阿里云）"
+```txt title="➤ frps.toml（阿里云）"
 bindPort = 7000
 auth.token = "复杂密钥1"
 ```
@@ -167,7 +167,7 @@ auth.token = "复杂密钥1"
 
 在开发机（Hostdare VPS）部署 FRPC，将本地 SSH（127.0.0.1:22）通过 STCP 暴露给阿里云：
 
-```expressive-code language="bash" title="➤ frpc.toml（开发机）"
+```txt title="➤ frpc.toml（开发机）"
 serverAddr = "公网IP"
 serverPort = 7000
 auth.token = "复杂密钥1"
@@ -184,7 +184,7 @@ localPort = 22
 
 本地部署 FRPC，通过 STCP visitor 模式连接至开发机：
 
-```expressive-code language="bash" title="➤ frpc.toml（本机）"
+```txt title="➤ frpc.toml（本机）"
 serverAddr = "公网IP"
 serverPort = 7000
 auth.token = "复杂密钥1"
@@ -200,7 +200,7 @@ bindPort = 6000
 
 ### 4.4 远程访问
 
-```expressive-code language="bash" title="➤ 启动与连接"
+```txt title="➤ 启动与连接"
 # 开发机启动 FRPC
 frpc -c frpc.toml
 
@@ -217,20 +217,20 @@ ssh -p 6000 {账号}@127.0.0.1
 
 ### 5.1 创建用户（服务器）
 
-```expressive-code language="bash" title="➤ 服务器：创建账号"
+```txt title="➤ 服务器：创建账号"
 sudo useradd -m newuser
 sudo passwd newuser
 ```
 
 ### 5.2 SSH 密钥配置（本机）
 
-```expressive-code language="bash" title="➤ 本机：生成密钥对"
+```txt title="➤ 本机：生成密钥对"
 ssh-keygen -t ed25519 -f ~/.ssh/{key_name} -C "name"
 ```
 
 本地 `~/.ssh/config`:
 
-```expressive-code language="bash" title="~/.ssh/config"
+```txt title="~/.ssh/config"
 Host {取个名字}
   HostName 127.0.0.1
   Port 6000
@@ -240,7 +240,7 @@ Host {取个名字}
 
 ### 5.3 公钥注入（服务器）
 
-```expressive-code language="bash" title="➤ 服务器：注入公钥"
+```txt title="➤ 服务器：注入公钥"
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 vim ~/.ssh/authorized_keys  # 粘贴公钥
@@ -251,13 +251,13 @@ chmod 600 ~/.ssh/authorized_keys
 
 编辑 `/etc/ssh/sshd_config`:
 
-```expressive-code language="bash" title="/etc/ssh/sshd_config 修改"
+```txt title="/etc/ssh/sshd_config 修改"
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 PubkeyAuthentication yes
 ```
 
-```expressive-code language="bash" title="➤ 服务器：重启 SSH"
+```txt title="➤ 服务器：重启 SSH"
 systemctl restart sshd
 ```
 
