@@ -1,6 +1,6 @@
 ---
 title: AI认知笔记 | 2026.05
-published: 2026-06-08
+published: 2026-06-03
 description: "AI 资本与商业化全面提速，通用推理模型触及数学研究前沿"
 image: "./cover.png"
 tags: ["AI", "Note"]
