@@ -1,5 +1,5 @@
 ---
-title: AI认知笔记 2026.03
+title: AI认知笔记 | 2026.03
 published: 2026-03-22
 description: "2026年3月：一份主观的AI观察与跨阶实操记录"
 image: "./cover.png"

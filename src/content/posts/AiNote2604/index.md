@@ -1,5 +1,5 @@
 ---
-title: AI认知笔记 2026.04
+title: AI认知笔记 | 2026.04
 published: 2026-05-08
 description: "Claude Opus 4.7 与 GPT-5.5 接连发布，国产模型跟上生产级水平"
 image: "./cover.png"
