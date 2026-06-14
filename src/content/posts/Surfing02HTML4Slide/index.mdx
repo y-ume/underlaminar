@@ -1,0 +1,121 @@
+---
+title: 冲浪2 | 做PPT试试HTML方案
+published: 2026-06-14
+description: 这篇文章会尝试一些方案，让你直观感受目前AI做汇报材料的能力
+image: "./cover.png"
+tags: ["AI", "Surfing"]
+category: Surfing
+draft: false
+---
+
+import exampleVideo from './example.mp4';
+import aiVideo from './ai-agent-briefing.mp4';
+
+## 背景
+
+> 工作中需要汇报，或学习时想讲清一个概念，做PPT或者画图是件挺麻烦的事。很多AI官方提供的方案又太模板化，如果对材料有自己的审美要求，生成的结果往往不太理想。这段时间，越来越多的人开始用网页作为生成汇报材料的媒介。这篇文章会尝试一些方案，让你直观感受目前AI做汇报材料的能力。
+
+## 方案冲浪
+
+- **[ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)** ⭐91.4k
+    为AI提供完整设计系统与UI/UX规则。
+- **[frontend-slides](https://github.com/zarazhangrui/frontend-slides)** ⭐21.5k
+    通过视觉选风格，生成动画丰富的无AI感幻灯片。
+- **[html-anything](https://github.com/nexu-io/html-anything)** ⭐6.7k
+  用本地代理与模板，将任意输入一键转为可发布HTML。
+- **[oh-my-ppt](https://github.com/arcsin1/oh-my-ppt)** ⭐1.6k
+  本地PPT编辑器，支持导入/对话修改，侧重演示文稿而非通用HTML。
+
+## 静态效果
+
+**UI-UX-Slides**
+
+> 让Agent生成一个版本后，又提供了四个版本
+
+- 初始版本，有翻页和标题能力。可以把提供素材的图片呈现在HTML中
+
+![UI-UX-Slides 初始版本 1](./images/uiux-v1-1.png)
+![UI-UX-Slides 初始版本 2](./images/uiux-v1-2.png)
+
+- 其他风格
+
+![UI-UX-Slides 风格 2](./images/uiux-v2.png)
+![UI-UX-Slides 风格 3](./images/uiux-v3.png)
+![UI-UX-Slides 风格 4](./images/uiux-v4.png)
+![UI-UX-Slides 风格 5](./images/uiux-v5.png)
+
+**Frontend-Slides**
+
+> 通过Agent自动安装，也同样生成了五组
+
+- 惊喜的是这个Skill支持输出可以编辑HTML文字和保存的功能
+
+![Frontend-Slides 可编辑 HTML 1](./images/fs-v1-1.png)
+![Frontend-Slides 可编辑 HTML 2](./images/fs-v1-2.png)
+![Frontend-Slides 可编辑 HTML 3](./images/fs-v1-3.png)
+
+- 其他风格
+
+![Frontend-Slides 风格 2](./images/fs-v2.png)
+![Frontend-Slides 风格 3](./images/fs-v3.png)
+![Frontend-Slides 风格 4](./images/fs-v4.png)
+
+**HTML-Anything**
+
+> 通过Agent安装后，使用npm启动web端
+
+- 会自动检测本地的Agent
+
+![HTML-Anything 自动检测 Agent](./images/ha-detect.png)
+
+- 输入文字，生成即可
+
+![HTML-Anything 输入文字](./images/ha-input.png)
+
+- 6分钟生成
+
+![HTML-Anything 6 分钟生成](./images/ha-generate.png)
+
+- 支持平台发布。实测公众号复制有问题，PNG可以完美保存
+
+![HTML-Anything 平台发布](./images/ha-publish.png)
+
+- 支持模板切换
+
+![HTML-Anything 模板切换](./images/ha-template.png)
+
+## 动态效果
+
+**UI-UX-Slides + 手搓小Skill**
+
+> 手搓小Skill没有风格，只有通过Remotion生成mp4和gif的小工具
+
+- 开发MVP主题
+
+<video src={exampleVideo} autoplay loop muted playsinline></video>
+
+**Frontend-Slides**
+
+> 基于原先效果让Agent追加一些动效
+
+- 选中会有图标交互
+
+![Frontend-Slides 选中图标交互](./images/fs-anim-icon.png)
+
+- 没有任何修改，可以看到奇怪飞转的飞轮
+
+<video src={aiVideo} autoplay loop muted playsinline></video>
+
+## 体验小结
+
+- 在系统复杂度上，ui-ux最轻量，能力依赖模型能力。
+- 在演示效果上，frontend-slides最佳，包括静态和动态。适合专业深度报告场景
+- 在开箱即用上，html-anything GUI集成度高，不过没有进一步深度使用。适合一次性报告场景
+- oh-my-ppt和html-anything相近，能力上会有局部增强，但系统架构上html-anything会强些
+
+在frontend-slides上形成自己的风格，是比较好的做法。但因为Skill里已经有大量信息，推荐拆解后对其进化行为进行约束
+
+## 后续探索方向
+
+1. 在 frontend-slides 上形成自己的风格
+2. 拆解后对进化行为进行约束
